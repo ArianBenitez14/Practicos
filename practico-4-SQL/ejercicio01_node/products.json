@@ -1,0 +1,22 @@
+[
+  { "id": 1, "nombre": "Laptop", "precio": 1000 },
+  { "id": 2, "nombre": "Mouse", "precio": 50 },
+  { "id": 3, "nombre": "Teclado", "precio": 80 },
+  { "id": 4, "nombre": "Monitor", "precio": 300 },
+  { "id": 5, "nombre": "Impresora", "precio": 150 },
+  { "id": 6, "nombre": "Tablet", "precio": 400 },
+  { "id": 7, "nombre": "Auriculares", "precio": 120 },
+  { "id": 8, "nombre": "Disco Duro Externo", "precio": 200 },
+  { "id": 9, "nombre": "Memoria USB 64GB", "precio": 30 },
+  { "id": 10, "nombre": "Router WiFi", "precio": 90 },
+  { "id": 11, "nombre": "Webcam HD", "precio": 70 },
+  { "id": 12, "nombre": "Silla Ergonómica", "precio": 250 },
+  { "id": 13, "nombre": "Escritorio", "precio": 500 },
+  { "id": 14, "nombre": "Tarjeta Gráfica", "precio": 800 },
+  { "id": 15, "nombre": "Microprocesador", "precio": 600 },
+  { "id": 16, "nombre": "Memoria RAM 16GB", "precio": 180 },
+  { "id": 17, "nombre": "Fuente de Poder 750W", "precio": 130 },
+  { "id": 18, "nombre": "Teclado Mecánico", "precio": 140 },
+  { "id": 19, "nombre": "Mouse Gamer", "precio": 110 },
+  { "id": 20, "nombre": "SSD 1TB", "precio": 220 }
+]
