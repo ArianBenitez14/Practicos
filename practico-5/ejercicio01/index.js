@@ -1,28 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
-const mysql = require('mysql2/promise');
+const dbUsers = require('./dbUsers.js');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-let connection;
-async function connect() {
-  connection = await mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'ejercicio_users_db',
-  });
-}
-
-connect();
-
-function usuarioVerif(req, res, next) {
-  if (!req.body.firstname || !req.body.lastname || !req.body.age) {
-    return res.status(400).send('Usuario inválido.');
-  } else {
-    next();
-  }
-}
 
 app.get('/', async (req, res) => res.send('Accediste al servidor.'));
 
