@@ -1,31 +1,26 @@
-const { Sequelize, Model, DataTypes } = require('sequelize');
+const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize('ejercicio_api_sequelize', 'root', 'root', {
-  host: '127.0.0.1',
-  port: 3306,
-  dialect: 'mysql',
-  logging: false,
-});
-
-class User extends Model {}
-User.init(
+const sequelize = new Sequelize(
+  process.env.DB_DATABASE,
+  process.env.DB_USERNAME,
+  process.env.DB_PASSWORD,
   {
-    nombre: DataTypes.STRING(100),
-    apellido: DataTypes.STRING(100),
-    email: DataTypes.STRING(100),
-    contraseña: DataTypes.STRING(100),
-  },
-  { sequelize, modelName: 'users' }
+    host: process.env.DB_HOST,
+    dialect: process.env.DB_CONNECTION,
+    logging: false,
+  }
 );
 
-class Article extends Model {}
-Article.init(
-  {
-    titulo: DataTypes.STRING(100),
-    contenido: DataTypes.STRING(100),
-    autor: DataTypes.STRING(100),
-  },
-  { sequelize, modelName: 'articles' }
-);
+const User = require("./User");
+const Article = require("./Article");
 
-module.exports = { Article, User, sequelize };
+User.initModel(sequelize);
+Article.initModel(sequelize);
+User.hasMany(Article);
+Article.belongsTo(User);
+
+module.exports = {
+  sequelize,
+  User,
+  Article,
+};
